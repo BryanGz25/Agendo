@@ -1,18 +1,18 @@
-import { Link } from 'react-router-dom';
-import { ArrowLeft, FlaskConical, Repeat, Target, TrendingDown } from 'lucide-react';
-import { AssumptionTag, Card, SimTag } from '../../shared/components/ui';
+import { FlaskConical, Repeat, Target, TrendingDown } from 'lucide-react';
+import { AssumptionTag, Card, SimTag } from '../../../shared/components/ui';
+import { PageHeader } from '../../../shared/components/DashboardLayout';
 import {
   formatMoney,
   formatMoney0,
   formatNumber,
   formatPercent,
   formatPercentFine,
-} from '../../shared/utils/format';
-import { UNIT_ECONOMICS } from '../../config/caseData';
-import { usePanelModel } from './hooks/usePanelModel';
-import FunnelChart from './components/FunnelChart';
-import TargetControls from './components/TargetControls';
-import LiveFunnel from './components/LiveFunnel';
+} from '../../../shared/utils/format';
+import { UNIT_ECONOMICS } from '../../../config/caseData';
+import { usePanelModel } from '../hooks/usePanelModel';
+import FunnelChart from '../components/FunnelChart';
+import TargetControls from '../components/TargetControls';
+import LiveFunnel from '../components/LiveFunnel';
 
 function Metric({ label, today, next, better }) {
   return (
@@ -58,24 +58,17 @@ const CHANNELS = [
 ];
 
 /** Panel for Valeria: where the funnel breaks and what the new setup changes. */
-export default function OwnerPanelPage() {
+export default function FunnelPage() {
   const m = usePanelModel();
   const { today, next } = m.scenarios;
 
   return (
-    <main className="mx-auto flex max-w-5xl flex-col gap-6 px-4 pb-12 pt-6">
-      <header className="flex flex-col gap-2">
-        <Link to="/" className="inline-flex items-center gap-1 text-sm font-semibold text-muted">
-          <ArrowLeft size={16} aria-hidden /> Volver al prototipo
-        </Link>
-        <h1 className="font-display text-3xl font-extrabold md:text-4xl">
-          Panel de la puesta en marcha
-        </h1>
-        <p className="max-w-2xl text-ink-soft">
-          Datos de hoy tomados del caso, por cada 100 trials. La meta del flujo nuevo es un{' '}
-          <AssumptionTag /> del equipo que se prueba con el experimento de abajo.
-        </p>
-      </header>
+    <div className="flex flex-col gap-6">
+      <PageHeader kicker="Embudo y meta" title="Puesta en marcha: hoy contra la meta" />
+      <p className="-mt-4 max-w-3xl text-ink-soft">
+        Datos de hoy tomados del caso, por cada 100 trials. La meta del flujo nuevo es un{' '}
+        <AssumptionTag /> del equipo que se prueba con el experimento de abajo.
+      </p>
 
       <Card className="border-accent/30 bg-accent-soft p-4">
         <p className="flex items-center gap-2 font-semibold text-accent-strong">
@@ -222,6 +215,6 @@ export default function OwnerPanelPage() {
         <SimTag /> Las metas del flujo nuevo y la conversión de la insignia son supuestos. Los datos
         de hoy salen del Caso B · Agendo, Parte 1 y Parte 2.
       </p>
-    </main>
+    </div>
   );
 }

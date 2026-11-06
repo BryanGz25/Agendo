@@ -13,9 +13,10 @@ const FIELDS = [
  * It is only needed to bill the shop when the 14 days end.
  */
 export default function BillingForm({ initial, onSave, onCancel }) {
-  const [values, setValues] = useState(
-    () => initial ?? Object.fromEntries(FIELDS.map((f) => [f.id, ''])),
-  );
+  const [values, setValues] = useState(() => ({
+    ...Object.fromEntries(FIELDS.map((f) => [f.id, ''])),
+    ...(initial ?? {}),
+  }));
   const [error, setError] = useState('');
 
   const submit = (event) => {

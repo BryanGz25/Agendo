@@ -138,7 +138,7 @@ export default function SharePage() {
             El cliente ya pagó por adelantado y le llegará un recordatorio por WhatsApp antes de la
             cita.
           </p>
-          <Button as={Link} to={`/agenda/${business.slug}`} variant="dark" className="mt-3 w-full">
+          <Button as={Link} to={`/app/${business.slug}`} variant="dark" className="mt-3 w-full">
             Ver mi agenda
           </Button>
         </Card>
@@ -158,7 +158,7 @@ export default function SharePage() {
       )}
 
       <Link
-        to={`/agenda/${business.slug}`}
+        to={`/app/${business.slug}`}
         className="text-center text-sm font-semibold text-muted underline"
       >
         Ir a mi agenda

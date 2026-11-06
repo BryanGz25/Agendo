@@ -1,6 +1,6 @@
 # Ficha de growth · Agendo · Caso B, Parte 2
 
-> Todas las cifras son por cada 100 trials y salen del caso, salvo las marcadas como **SUPUESTO**. Las cuentas están programadas y probadas en [`src/features/panel/utils/growthModel.js`](../src/features/panel/utils/growthModel.js).
+> Todas las cifras son por cada 100 trials y salen del caso, salvo las marcadas como **SUPUESTO**. Las cuentas están programadas y probadas en [`src/features/admin/utils/growthModel.js`](../src/features/admin/utils/growthModel.js).
 
 ## 1. Dónde se pierde más gente hoy
 

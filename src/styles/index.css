@@ -3,24 +3,32 @@
 /* Design tokens. Tailwind v4 exposes every --color-* / --font-* as utilities
    (bg-ink, text-accent, font-display...). */
 @theme {
-  --color-ink: #1b1d22;
-  --color-ink-soft: #3a3e47;
-  --color-muted: #5f6470;
-  --color-paper: #f6f4ef;
-  --color-card: #ffffff;
-  --color-line: #e3e0d8;
-  --color-accent: #c8441f;
-  --color-accent-strong: #a8361a;
-  --color-accent-soft: #fbe7df;
-  --color-blue: #2b59c3;
-  --color-blue-soft: #e4ebfa;
-  --color-ok: #1f7a4d;
-  --color-ok-soft: #dff2e8;
-  --color-warn: #8a5a00;
-  --color-warn-soft: #fbf0d6;
+  /* Barbershop palette: espresso, leather, brass and the pole's red and blue. */
+  --color-ink: #17120e;
+  --color-ink-soft: #3b2f25;
+  --color-muted: #6e6153;
+  --color-paper: #f3ebdd;
+  --color-card: #fffaf1;
+  --color-line: #e2d5bd;
+  --color-accent: #a3261d;
+  --color-accent-strong: #861d16;
+  --color-accent-soft: #f5e0da;
+  --color-gold: #c9a227;
+  --color-gold-strong: #8f7012;
+  --color-gold-soft: #f3e7bf;
+  --color-blue: #1f4e8c;
+  --color-blue-soft: #e1e9f4;
+  --color-ok: #2d6a3e;
+  --color-ok-soft: #e0eedf;
+  --color-warn: #835a00;
+  --color-warn-soft: #f6ebcf;
   --color-whatsapp: #128c4a;
+  --color-night: #0c0a08;
+  --color-night-soft: #1a1511;
+  --color-smoke: #a89a88;
 
-  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-label: 'Oswald', 'Arial Narrow', ui-sans-serif, sans-serif;
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --animate-slide-in: slide-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -45,6 +53,24 @@
       opacity: 1;
       transform: translateY(0) scale(1);
     }
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
